@@ -1,13 +1,9 @@
 function formatString(input: string, toUpper?: boolean): string{
-//    console.log(toUpper);
-    if (toUpper || toUpper === undefined) {
-        return input.toUpperCase();
-    }
-    return input.toLocaleLowerCase();
+    return toUpper || toUpper === undefined ? input.toUpperCase() : input.toLocaleLowerCase();
 }
 // console.log( formatString("Hello"));          // Output: "HELLO"
 // console.log( formatString("Hello",true));          // Output: "HELLO"
-// console.log( formatString("Hello",false));          // Output: "HELLO"
+// console.log( formatString("Hello",false));          // Output: "hello"
 
 function filterByRating(items: { title: string; rating: number }[]): { title: string; rating: number }[]{
     return items.filter(item => item.rating >= 4).map(item => ({ title: item.title, rating: item.rating }));
